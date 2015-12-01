@@ -105,4 +105,6 @@
     file: path={{ repo_subfolder }} state=directory mode=777 recurse=yes
     when: drupal_dl.changed == True or profile_copy.changed == True or vmbox.changed == True
 
+  - name: Generate txt file for static pull requests
+    copy: content="Use Pull Request ID (this is branch name according to our naming convention)\nExample:\nPR-201\nPR-210" dest={{ repo_subfolder }}/{{ drupal_subfolder }}/devops/static_pull_requests.txt
   handlers:
