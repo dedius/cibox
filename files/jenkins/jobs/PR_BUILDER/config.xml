@@ -76,7 +76,7 @@
 export PYTHONUNBUFFERED=1
 echo "===============" > ${WORKSPACE}/commentinfo.md
 cd new_pull_request
-if grep ${ghprbSourceBranch} -c docroot/static_pull_requests.txt; then
+if grep ${ghprbSourceBranch} -c docroot/devops/static_pull_requests.txt; then
 CUSTOM_BUILD_ID="pr_build_${ghprbSourceBranch}"
 else
 CUSTOM_BUILD_ID="build${BUILD_NUMBER}"
